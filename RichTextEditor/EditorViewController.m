@@ -30,8 +30,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 -(void)initialTextViewSetUp
 {
+    self.title = @"RichTextEditor";
     [richTextEditorTextView becomeFirstResponder];
-    richTextEditorTextView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+//    richTextEditorTextView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+//    richTextEditorTextView.contentInset = UIEdgeInsetsMake(10,10, 0, 10);
     richTextEditorTextView.contentHt = self.view.bounds.size.height;
     richTextEditorTextView.richTextDelegate = self ;
     richTextEditorTextView.keyboardType=UIKeyboardTypeDefault;
@@ -48,8 +50,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     CGRect shadowFrame=CGRectMake(0, 7, richTextEditorTextView.frame.size.width, richTextEditorTextView.frame.size.height-5);
     richTextEditorTextView.layer.shadowPath = [[UIBezierPath bezierPathWithRect:shadowFrame] CGPath];
     
-    CGFloat padding = 20;
-    placeHolderLabel.frame = CGRectMake(padding, padding, self.view.bounds.size.width - 2 *padding, 25);
+//    CGFloat padding = 20;
+//    placeHolderLabel.frame = CGRectMake(padding, padding, self.view.bounds.size.width - 2 *padding, 25);
 
 }
 -(void)textViewToolBarSetup
@@ -96,12 +98,12 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 -(void)handlePlaceHolder
 {
-    if (richTextEditorTextView.text.length>0)
-        _placeHolderLabel.hidden= true;
+    if ([richTextEditorTextView hasText])
+        placeHolderLabel.hidden= true;
     else
     {
-        _placeHolderLabel.hidden= false;
-    [_placeHolderLabel.superview bringSubviewToFront:_placeHolderLabel];
+        placeHolderLabel.hidden= false;
+    [placeHolderLabel.superview bringSubviewToFront:placeHolderLabel];
     }
 }
 

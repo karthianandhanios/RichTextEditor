@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1578" y="-311"/>
         </scene>
         <!--Editor-->
         <scene sceneID="JVP-e5-BRi">
@@ -54,32 +54,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="50" restorationIdentifier="RichTextEditorTextView" keyboardDismissMode="onDrag" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wEV-gc-vn0" customClass="RichTextEditorTextView">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
+                                <rect key="frame" x="16" y="14" width="345" height="653"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.96143712384426494" green="0.96520883328941143" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="7"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">When designing for iPhone X, you must ensure that layouts fill the screen and aren't obscured by the device's rounded corners, sensor housing, or the indicator for accessing the Home screen.</string>
-                                        <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="scrollIndicatorInsets" minX="10" minY="100" maxX="10" maxY="7"/>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter the Text Here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsd-KF-vQy">
-                                <rect key="frame" x="26" y="10" width="323" height="21"/>
+                                <rect key="frame" x="22" y="85" width="337" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.27613035851679224" blue="0.30517590515063375" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fLS-Wb-rs0"/>
                     <connections>
                         <outlet property="RichTextEditorTextView" destination="wEV-gc-vn0" id="BPl-Ha-zSi"/>
                         <outlet property="placeHolderLabel" destination="dsd-KF-vQy" id="ZfS-fO-pil"/>
@@ -88,22 +81,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="leO-UA-4Dq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2753" y="-16"/>
+            <point key="canvasLocation" x="2752.8000000000002" y="-10.344827586206897"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8sC-mv-XYv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FRr-Q1-fmw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PXe-GY-aVf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="PXe-GY-aVf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.54562909338834187" green="0.70492202064583265" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" red="0.98522124606949235" green="1" blue="0.96583076788235156" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.4873367370207014" green="0.61916414435302958" blue="0.91330901015228427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="K2m-m6-Pm5"/>
+                        <segue destination="cYn-a2-m4A" kind="relationship" relationship="rootViewController" id="AbO-KM-GZd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8k-EK-Yrf" userLabel="First Responder" sceneMemberID="firstResponder"/>

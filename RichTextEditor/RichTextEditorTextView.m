@@ -73,6 +73,8 @@ CGFloat totalHt;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameChanged:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameChanged:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
+    self.font = [UIFont systemFontOfSize:16];
+    
     self.toolBar = [[RichTextEditorToolbar alloc] initWithFrame:CGRectMake(0 ,0, [self currentScreenBoundsDependOnOrientation].size.width, RICHTEXTEDITOR_TOOLBAR_HEIGHT)
                                                        delegate:self
                                                      dataSource:self];
@@ -127,7 +129,7 @@ CGFloat totalHt;
 
 -(void)changePlaceholderHiddenStatus
 {
-    
+     [_richTextDelegate handlePlaceHolder];
 }
 
 - (CGRect)caretRectForPosition:(UITextPosition *)position {
@@ -210,10 +212,7 @@ CGFloat totalHt;
 
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    if (range.length > 0) {
-           [_richTextDelegate handlePlaceHolder];
-    }
-     //autocorrection
+        //autocorrection
     if (!isAutoCorrection && ([text length] >1 || range.length >1)) {
         isAutoCorrection = true;
         NSRange pSelectedRange = self.selectedRange;
@@ -267,6 +266,7 @@ CGFloat totalHt;
         
     
         isAutoCorrection = false;
+        
         [self changePlaceholderHiddenStatus];
         return NO;
         
@@ -415,7 +415,8 @@ CGFloat totalHt;
 
 -(void)textViewDidChange:(UITextView *)textView
 {
-    [_richTextDelegate handlePlaceHolder];
+    [self changePlaceholderHiddenStatus];
+    
     NSInteger currentLocation = textView.selectedRange.location;
     if (prevRange.length==0 && textView.selectedRange.location >prevRange.location ) {
         
